@@ -9,11 +9,11 @@ import org.junit.Test;
 public class GeradorPrimosTest {
 
 	//Entradas Válidas
-	@Test(expected = NullObjectException.class)
+	/*@Test(expected = NullObjectException.class)
 	public void IgualA2() throws Exception {	
 		String gerador = GeradorPrimos.gerarPrimosAte(2);
 		Assert.assertTrue("O resultado esperado dois", gerador == "Dois");
-	}
+	}*/
 	
 	/*@Test(expected = NullObjectException.class)
 	public void MaiorQue2() throws Exception {		
@@ -41,8 +41,12 @@ public class GeradorPrimosTest {
 		String gerador = GeradorPrimos.gerarPrimosAte(1);
 	}
 	
-	//Testar inicializaListaCandidatos	
+	/*@Test(expected = Exception.class)
+	public void MaiorQue2Float() throws Exception {		
+		String gerador = GeradorPrimos.gerarPrimosAte(2.5f);
+	}*/
 	
+	//Testar inicializaListaCandidatos		
 	//Entradas Válidas
 	/*@Test(expected = NullObjectException.class)
 	public void IgualA2() throws Exception {	
@@ -76,5 +80,9 @@ public class GeradorPrimosTest {
 	public void InitMenorQue2() throws Exception {		
 		boolean [] init = GeradorPrimos.inicializaListaCandidatos(1);
 	}
+	/*@Test(expected = Exception.class)
+	public void MaiorQue2Float() throws Exception {		
+		String gerador = GeradorPrimos.inicializaListaCandidatos(2.5f);
+	}*/
 
 }
