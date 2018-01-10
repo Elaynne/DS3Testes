@@ -9,46 +9,72 @@ import org.junit.Test;
 public class GeradorPrimosTest {
 
 	//Entradas Válidas
-	/*@Test(expected = NullObjectException.class)
+	@Test(expected = NullObjectException.class)
 	public void IgualA2() throws Exception {	
 		String gerador = GeradorPrimos.gerarPrimosAte(2);
 		Assert.assertTrue("O resultado esperado dois", gerador == "Dois");
-		//fail("Not yet implemented");
-	}*/
+	}
 	
 	/*@Test(expected = NullObjectException.class)
 	public void MaiorQue2() throws Exception {		
 		String gerador = GeradorPrimos.gerarPrimosAte(3);
 		Assert.assertEquals("O resultado esperado deveria dois", "dois", gerador);
-		fail("O valor deveria ser maior que 2");
 	}*/
 	/*@Test(expected = NullObjectException.class)
 	public void MaioresQue2() throws Exception {		
 		String gerador = GeradorPrimos.gerarPrimosAte(5);
 		Assert.assertEquals("O resultado esperado deveria dois", "dois", gerador);
-		fail("O valor deveria ser maior que 2");
 	}*/
 	
 //Entradas Inválidas
 	@Test(expected = Exception.class)
-	public void Negativo() throws Exception {
-		 
+	public void Negativo() throws Exception {		 
 		String gerador = GeradorPrimos.gerarPrimosAte(-1);
-		Assert.assertEquals(expected, gerador);
-		
 	}
-	/*@Test(expected = NullObjectException.class)
+	/*@Test(expected = Exception.class)
 	public void FloatsValue() throws Exception {		
 		String gerador = GeradorPrimos.gerarPrimosAte(0.5f);
-		Assert.assertEquals("O resultado esperado deveria ser dois", "dois", gerador);
-		fail("Erro, O valor deveria ser maior que 2");
+	}*/
+	
+	@Test(expected = Exception.class)
+	public void MenorQue2() throws Exception {		
+		String gerador = GeradorPrimos.gerarPrimosAte(1);
+	}
+	
+	//Testar inicializaListaCandidatos	
+	
+	//Entradas Válidas
+	/*@Test(expected = NullObjectException.class)
+	public void IgualA2() throws Exception {	
+		String gerador = GeradorPrimos.inicializaListaCandidatos(2);
+		Assert.assertTrue("O resultado esperado dois", gerador == "Dois");
 	}*/
 	
 	/*@Test(expected = NullObjectException.class)
-	public void MenorQue2() throws Exception {		
-		String gerador = GeradorPrimos.gerarPrimosAte(1);
-		Assert.assertEquals("O resultado esperado deveria ser dois", "dois", gerador);
-		fail("Erro, O valor deveria ser maior que 2");
+	public void MaiorQue2() throws Exception {		
+		String gerador = GeradorPrimos.inicializaListaCandidatos(3);
+		Assert.assertEquals("O resultado esperado deveria dois", "dois", gerador);
 	}*/
+	/*@Test(expected = NullObjectException.class)
+	public void MaioresQue2() throws Exception {		
+		String gerador = GeradorPrimos.inicializaListaCandidatos(5);
+		Assert.assertEquals("O resultado esperado deveria dois", "dois", gerador);
+	}*/
+	
+//Entradas Inválidas
+	@Test(expected = Exception.class)
+	public void ImitNegativo() throws Exception {		 
+		boolean [] init = GeradorPrimos.inicializaListaCandidatos(-1);
+	}
+	/*@Test(expected = Exception.class)
+	public void InitFloatsValue() throws Exception {		
+		boolean [] init  = GeradorPrimos.inicializaListaCandidatos(0.5f);
+	}*/
+	
+	//foi necessário implementar exceção neste método em geradorPrimos
+	@Test(expected = Exception.class)
+	public void InitMenorQue2() throws Exception {		
+		boolean [] init = GeradorPrimos.inicializaListaCandidatos(1);
+	}
 
 }
