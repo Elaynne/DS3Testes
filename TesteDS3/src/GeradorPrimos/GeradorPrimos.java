@@ -25,12 +25,18 @@ public class GeradorPrimos {
 	    }  
 	}  
 	
-	public static boolean[] inicializaListaCandidatos(int valorMaximo) {  
+	public static boolean[] inicializaListaCandidatos(int valorMaximo) throws Exception{  
 		boolean [] resultado = new boolean[valorMaximo + 1];  
-		resultado[0] = resultado [1] = false;  
-		for (int i = 2; i < resultado.length; i++) {  
+		resultado[0] = resultado [1] = false;  	
+		if(valorMaximo >= 2)
+		{
+			for (int i = 2; i < resultado.length; i++) {  
 		        resultado[i] = true;  
-		}  
-		return resultado;
+			}
+			return resultado;
+		}
+		else {  
+	        throw new RuntimeException();  
+	    }  
 	}  
 }
