@@ -81,7 +81,7 @@ public class GeradorPrimosTest {
 		boolean [] init = GeradorPrimos.inicializaListaCandidatos(1);
 	}
 	/*@Test(expected = Exception.class)
-	public void MaiorQue2Float() throws Exception {		
+	public void InitMaiorQue2Float() throws Exception {		
 		String gerador = GeradorPrimos.inicializaListaCandidatos(2.5f);
 	}*/
 
